@@ -1,9 +1,0 @@
-Revision history for Perl extension Getopt::Attribute.
-
-0.02  Thu Jun 14 15:27:49 2001
-	- added documentation and tests
-
-0.01  Mon Jun 11 14:12:48 2001
-	- original version; created by h2xs 1.20 with options
-		-XAn Getopt::Attribute
-

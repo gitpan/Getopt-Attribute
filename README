@@ -4,14 +4,14 @@ NAME
 SYNOPSIS
       use Getopt::Attribute;
 
-      my $verbose : Getopt(verbose!);
-      my $all     : Getopt(all);
-      my $size    : Getopt(size=s);
-      my $more    : Getopt(more+);
-      my @library : Getopt(library=s);
-      my %defines : Getopt(define=s);
+      our $verbose : Getopt(verbose!);
+      our $all     : Getopt(all);
+      our $size    : Getopt(size=s);
+      our $more    : Getopt(more+);
+      our @library : Getopt(library=s);
+      our %defines : Getopt(define=s);
       sub quiet : Getopt(quiet) { our $quiet_msg = 'seen quiet' }
-      usage() if my $man : Getopt(man);
+      usage() if our $man : Getopt(man);
       ...
 
       # Meanwhile, on some command line:
@@ -21,24 +21,28 @@ SYNOPSIS
                --define os=linux --define vendor=redhat --man -- foo
 
 DESCRIPTION
-    This module provides an attribute wrapper around `Getopt::Long'. Instead
+    Note: This version of the module works works with perl 5.8.0. If you
+    need it to work with perl 5.6.x, please use an earlier version from
+    CPAN.
+
+    This module provides an attribute wrapper around "Getopt::Long". Instead
     of declaring the options in a hash with references to the variables and
-    subroutines affected by the options, you can use the `Getopt' attribute
+    subroutines affected by the options, you can use the "Getopt" attribute
     on the variables and subroutines directly.
 
     As you can see from the Synopsis, the attribute takes an argument of the
-    same format as you would give as the hash key for `Getopt::Long'. See
-    the `Getopt::Long' manpage for details.
+    same format as you would give as the hash key for "Getopt::Long". See
+    the "Getopt::Long" manpage for details.
 
     Note that since attributes are processed during CHECK, but assignments
     on newly declared variables are processed during run-time, you can't set
     defaults on those variables beforehand, like this:
 
-            my $verbose : Getopt(verbose!) = 1;  # DOES NOT WORK
+            our $verbose : Getopt(verbose!) = 1;  # DOES NOT WORK
 
     Instead, you have to establish defaults afterwards, like so:
 
-            my $verbose : Getopt(verbose!);
+            our $verbose : Getopt(verbose!);
             $verbose ||= 1;
 
 BUGS
@@ -46,10 +50,10 @@ BUGS
     the author.
 
 AUTHOR
-    Marcel Grunauer, <marcel@codewerk.com>
+    Marcel Grünauer <marcel.gruenauer@chello.at>
 
 COPYRIGHT
-    Copyright 2001 Marcel Grunauer. All rights reserved.
+    Copyright 2001 Marcel Grünauer. All rights reserved.
 
     This library is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.

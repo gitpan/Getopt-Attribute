@@ -1,74 +1,32 @@
 package Getopt::Attribute;
 
-# $Id: Attribute.pm,v 1.3 2002/07/17 21:48:50 marcelgr Exp $
-#
-# $Log: Attribute.pm,v $
-# Revision 1.3  2002/07/17 21:48:50  marcelgr
-# added version warning to pod
-#
-# Revision 1.2  2002/07/17 21:10:56  marcelgr
-# updated for perl 5.8.0
-#
-# Revision 1.1.1.1  2002/06/13 07:17:54  marcelgr
-# initial import
-#
-
-require 5.008;
+require 5.006001;
 use Getopt::Long;
 use Attribute::Handlers;
 
-(our $VERSION) = '$Revision: 1.3 $' =~ /([\d.]+)/;
+our $VERSION = '1.3.2';
 
 sub UNIVERSAL::Getopt : ATTR(RAWDATA,BEGIN) {
 	my ($ref, $data) = @_[2,4];
-
 	our %options;
+# this has to be an array as we're chasing refs later
+    if ($data =~ m/^(\S+)\s+(.*)/) {    
+        $data = $1;
+        push our @defaults, [ $ref => $2 ];
+    }
 	$options{$data} = $ref;
 }
 
-INIT { GetOptions(our %options) }
+INIT {
+    GetOptions(our %options);
+    defined ${$_->[0]} or ${$_->[0]} = $_->[1] for our @defaults;
+}
 
 sub options { our %options }
 
 1;
 
 __END__
-
-=for prereqs
-Getopt::Long
-Attribute::Handlers 0.70
-Test::More 0.42
-
-=for makepmdist-tests
-use strict;
-use Test::More tests => 9;
-use Getopt::Attribute;
-BEGIN {
-	@ARGV = qw(--noverbose --all --size=23 --more --more --more --quiet
-	    --library lib/stdlib --library lib/extlib
-	    --define os=linux --define vendor=redhat --man -- --more)
-}
-our $verbose : Getopt(verbose!);
-is($verbose, 0, 'turned-off boolean option');
-our $all     : Getopt(all);
-is($all, 1, 'turned-on boolean option');
-our $size    : Getopt(size=s);
-is($size, 23, 'string option');
-our $more    : Getopt(more+);
-is($more, 3, 'flag given several times');
-our @library : Getopt(library=s);
-our $library = join ':' => @library;
-is($library, 'lib/stdlib:lib/extlib', 'array option');
-our %defines : Getopt(define=s);
-our $defines = join ', ' => map "$_ => $defines{$_}" => keys %defines;
-ok(keys(%defines) == 2 &&
-    $defines{os} eq 'linux' && $defines{vendor} eq 'redhat', 'hash option');
-sub quiet : Getopt(quiet) { our $quiet_msg = 'seen quiet' }
-is(our $quiet_msg, 'seen quiet', 'option with code handler');
-usage() if our $man : Getopt(man);
-sub usage { our $man_msg = 'seen man' }
-is(our $man_msg, 'seen man', 'another option with code handler');
-ok(length(@ARGV) == 1 && $ARGV[0] eq '--more', 'non-option option-look-a-like');
 
 =head1 NAME
 
@@ -118,6 +76,11 @@ Instead, you have to establish defaults afterwards, like so:
 
 	our $verbose : Getopt(verbose!);
 	$verbose ||= 1;
+
+Alternatively, you can specify a default value within the Getopt
+attribute:
+
+    our $def2 : Getopt(def2=i 42);
 
 =head1 BUGS
 

@@ -45,6 +45,11 @@ DESCRIPTION
             our $verbose : Getopt(verbose!);
             $verbose ||= 1;
 
+    Alternatively, you can specify a default value within the Getopt
+    attribute:
+
+        our $def2 : Getopt(def2=i 42);
+
 BUGS
     None known so far. If you find any bugs or oddities, please do inform
     the author.

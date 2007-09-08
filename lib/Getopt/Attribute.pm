@@ -1,15 +1,14 @@
 package Getopt::Attribute;
 
-require 5.006001;
 use Getopt::Long;
 use Attribute::Handlers;
 
-our $VERSION = '1.3.2';
+our $VERSION = '1.41';
 
 sub UNIVERSAL::Getopt : ATTR(RAWDATA,BEGIN) {
 	my ($ref, $data) = @_[2,4];
 	our %options;
-# this has to be an array as we're chasing refs later
+    # this has to be an array as we're chasing refs later
     if ($data =~ m/^(\S+)\s+(.*)/) {    
         $data = $1;
         push our @defaults, [ $ref => $2 ];
@@ -82,24 +81,34 @@ attribute:
 
     our $def2 : Getopt(def2=i 42);
 
-=head1 BUGS
+=head1 BUGS AND LIMITATIONS
 
-None known so far. If you find any bugs or oddities, please do inform the
-author.
+No bugs have been reported.
+
+Please report any bugs or feature requests to
+C<bug-getopt-attribute@rt.cpan.org>, or through the web interface at
+L<http://rt.cpan.org>.
+
+=head1 INSTALLATION
+
+See perlmodinstall for information and options on installing Perl modules.
+
+=head1 AVAILABILITY
+
+The latest version of this module is available from the Comprehensive Perl
+Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
 
 =head1 AUTHOR
 
-Marcel GrE<uuml>nauer <marcel.gruenauer@chello.at>
+Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
-Copyright 2001 Marcel GrE<uuml>nauer. All rights reserved.
+Copyright 2001-2007 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-=head1 SEE ALSO
-
-perl(1), Getopt::Long(3pm), Attribute::Handlers(3pm).
-
 =cut
+

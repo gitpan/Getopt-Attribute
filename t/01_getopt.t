@@ -1,7 +1,8 @@
+use warnings;
 use strict;
-use Test::More tests => 12;
+use Test::More tests => 11;
+use Getopt::Attribute;
 
-BEGIN { use_ok('Getopt::Attribute') }
 BEGIN {
 	@ARGV = qw(--noverbose --all --size=23 --more --more --more --quiet
 	    --library lib/stdlib --library lib/extlib --def2=4

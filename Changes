@@ -1,0 +1,15 @@
+Revision history for Perl extension Getopt::Attribute
+
+1.41  Sa Sep  8 11:10:40 CEST 2007
+        - converted to new-style distribution (ShipIt, Module::Install)
+        - moved files to proper locations (lib/, t/)
+        - fixed documentation
+
+1.32  Sat May 31 18:44:12 2003
+        - added tests
+
+1.30  Thu Jul 18 12:37:51 2002
+        - first release version
+
+0.01  Tue May  8 04:05:59 2001
+        - original version

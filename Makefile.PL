@@ -1,13 +1,9 @@
-require 5.006001;
-use ExtUtils::MakeMaker;
+use inc::Module::Install;
+name 'Getopt-Attribute';
+all_from 'lib/Getopt/Attribute.pm';
 
-WriteMakefile(
-  NAME         => 'Getopt::Attribute',
-  VERSION_FROM => 'Attribute.pm',
-  dist         => { COMPRESS => 'gzip -6f', SUFFIX => 'gz', },
-  PREREQ_PM    => {
-    Getopt::Long        =>  0,
-    Attribute::Handlers => 0.70,
-    Test::More          => 0.42,
-  },
-);
+build_requires 'Test::More';
+
+use_test_base;
+auto_include;
+WriteAll;

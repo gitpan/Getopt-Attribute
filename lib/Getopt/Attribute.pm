@@ -3,7 +3,7 @@ package Getopt::Attribute;
 use Getopt::Long;
 use Attribute::Handlers;
 
-our $VERSION = '1.41';
+our $VERSION = '1.42';
 
 sub UNIVERSAL::Getopt : ATTR(RAWDATA,BEGIN) {
 	my ($ref, $data) = @_[2,4];

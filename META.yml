@@ -14,4 +14,6 @@ no_index:
   directory: 
     - inc
     - t
-version: 1.41
+requires: 
+  perl: 5.8.0
+version: 1.42

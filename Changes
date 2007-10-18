@@ -1,5 +1,8 @@
 Revision history for Perl extension Getopt::Attribute
 
+1.43  Do Okt 18 10:09:39 CEST 2007
+        - fixed version requirement of Test::More
+
 1.42  So Sep  9 23:11:11 CEST 2007
         - require perl 5.8, as I got some test failures on 5.6.x
 

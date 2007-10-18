@@ -2,7 +2,9 @@
 abstract: Attribute wrapper for Getopt::Long
 author: Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 build_requires: 
+  Test::Compile: 0
   Test::More: 0
+  UNIVERSAL::require: 0
 distribution_type: module
 generated_by: Module::Install version 0.67
 license: perl
@@ -16,4 +18,4 @@ no_index:
     - t
 requires: 
   perl: 5.8.0
-version: 1.42
+version: 1.43

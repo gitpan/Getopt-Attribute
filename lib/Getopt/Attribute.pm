@@ -1,9 +1,11 @@
 package Getopt::Attribute;
 
+use warnings;
+use strict;
 use Getopt::Long;
 use Attribute::Handlers;
 
-our $VERSION = '1.42';
+our $VERSION = '1.43';
 
 sub UNIVERSAL::Getopt : ATTR(RAWDATA,BEGIN) {
 	my ($ref, $data) = @_[2,4];

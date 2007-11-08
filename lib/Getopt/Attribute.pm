@@ -5,7 +5,9 @@ use strict;
 use Getopt::Long;
 use Attribute::Handlers;
 
-our $VERSION = '1.43';
+
+our $VERSION = '1.44';
+
 
 sub UNIVERSAL::Getopt : ATTR(RAWDATA,BEGIN) {
 	my ($ref, $data) = @_[2,4];
@@ -18,12 +20,17 @@ sub UNIVERSAL::Getopt : ATTR(RAWDATA,BEGIN) {
 	$options{$data} = $ref;
 }
 
+
 INIT {
-    GetOptions(our %options);
+    our $error = 0;
+    GetOptions(our %options) or $error = 1;
     defined ${$_->[0]} or ${$_->[0]} = $_->[1] for our @defaults;
 }
 
+
 sub options { our %options }
+sub error   { our $error }
+
 
 1;
 
@@ -82,6 +89,11 @@ Alternatively, you can specify a default value within the Getopt
 attribute:
 
     our $def2 : Getopt(def2=i 42);
+
+To check whether there was an error during getopt processing you can use the
+error() function:
+
+    pod2usage(-verbose => 2, -exitval => 0) if Getopt::Attribute->error;
 
 =head1 BUGS AND LIMITATIONS
 

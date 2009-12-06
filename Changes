@@ -1,24 +1,42 @@
-Revision history for Perl extension Getopt::Attribute
+Revision history for Perl extension Getopt-Attribute
 
-1.44  Thu Nov  8 12:09:16 CET 2007
-        - added error()
+1.46  Mon 2009.12.07 00:53:55 CET (Marcel Gruenauer <marcel@cpan.org>)
+     - Changed dist style and Changes back to standard. People didn't like it -
+       the nail that sticks out gets hammered down.
+     - Added standard test files; this will also help with CPANTS.
+     - reduced dependencies using author tests
+     - better dist engineering (INSTALL, README, README.mkdn etc.)
 
-1.43  Do Okt 18 10:09:39 CEST 2007
-        - fixed version requirement of Test::More
+1.45  Thu, 29 May 2008 12:05:12 -0000 (Marcel Gruenauer <marcel@cpan.org>)
+     - Converted Changes file to YAML style
+     - .shipit: added Twitter step
+     - Makefile.PL: added auto_install() and process_templates()
+     - lib/*: converted to template
+     - updated MANIFEST
+     - added t/perlcriticrc
+     - updated MANIFEST
+     - .shipit: fixed svk.tagpattern
+     - tags: NEWFEATURE
 
-1.42  So Sep  9 23:11:11 CEST 2007
-        - require perl 5.8, as I got some test failures on 5.6.x
+1.44  Thu, 08 Nov 2007 12:09:16 +0100 (Marcel Gruenauer <marcel@cpan.org>)
+     - added error()
 
-1.41  Sa Sep  8 11:10:40 CEST 2007
-        - converted to new-style distribution (ShipIt, Module::Install)
-        - moved files to proper locations (lib/, t/)
-        - fixed documentation
+1.43  Thu, 18 Oct 2007 10:09:39 +0200 (Marcel Gruenauer <marcel@cpan.org>)
+     - fixed version requirement of Test::More
 
-1.32  Sat May 31 18:44:12 2003
-        - added tests
+1.42  Sun, 09 Sep 2007 23:11:11 +0200 (Marcel Gruenauer <marcel@cpan.org>)
+     - require perl 5.8, as I got some test failures on 5.6.x
 
-1.30  Thu Jul 18 12:37:51 2002
-        - first release version
+1.41  Sat, 08 Sep 2007 11:10:40 +0200 (Marcel Gruenauer <marcel@cpan.org>)
+     - converted to new-style distribution (ShipIt, Module::Install)
+     - moved files to proper locations (lib/, t/)
+     - fixed documentation
 
-0.01  Tue May  8 04:05:59 2001
-        - original version
+1.32  Sat, 31 May 2003 18:44:12 +0100 (Marcel Gruenauer <marcel@cpan.org>)
+     - added tests
+
+1.30  Thu, 18 Jul 2002 12:37:51 +0100 (Marcel Gruenauer <marcel@cpan.org>)
+     - first release version
+
+0.01  Tue, 08 May 2001 04:05:59 +0100 (Marcel Gruenauer <marcel@cpan.org>)
+     - original version

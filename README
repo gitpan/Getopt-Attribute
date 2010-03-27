@@ -1,6 +1,9 @@
 NAME
     Getopt::Attribute - Attribute wrapper for Getopt::Long
 
+VERSION
+    version 1.100860
+
 SYNOPSIS
       use Getopt::Attribute;
 
@@ -54,28 +57,40 @@ DESCRIPTION
 
         pod2usage(-verbose => 2, -exitval => 0) if Getopt::Attribute->error;
 
-BUGS AND LIMITATIONS
-    No bugs have been reported.
+METHODS
+  error
+    FIXME
 
-    Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org>.
+  options
+    FIXME
 
 INSTALLATION
     See perlmodinstall for information and options on installing Perl
     modules.
 
+BUGS AND LIMITATIONS
+    No bugs have been reported.
+
+    Please report any bugs or feature requests through the web interface at
+    <http://rt.cpan.org/Public/Dist/Display.html?Name=Getopt-Attribute>.
+
 AVAILABILITY
     The latest version of this module is available from the Comprehensive
     Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
-    CPAN site near you. Or see
+    CPAN site near you, or see
     <http://search.cpan.org/dist/Getopt-Attribute/>.
 
-AUTHORS
-    Marcel Grünauer, "<marcel@cpan.org>"
+    The development version lives at
+    <http://github.com/hanekomu/Getopt-Attribute/>. Instead of sending
+    patches, please fork this project using the standard git and github
+    infrastructure.
+
+AUTHOR
+      Marcel Gruenauer <marcel@cpan.org>
 
 COPYRIGHT AND LICENSE
-    Copyright 2001-2009 by the authors.
+    This software is copyright (c) 2001 by Marcel Gruenauer.
 
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 

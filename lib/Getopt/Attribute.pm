@@ -1,10 +1,12 @@
-package Getopt::Attribute;
 use 5.008;
-use warnings;
 use strict;
+use warnings;
+
+package Getopt::Attribute;
+our $VERSION = '1.100860';
+# ABSTRACT: Attribute wrapper for Getopt::Long
 use Getopt::Long;
 use Attribute::Handlers;
-our $VERSION = '1.46';
 
 sub UNIVERSAL::Getopt : ATTR(RAWDATA,BEGIN) {
     my ($ref, $data) = @_[ 2, 4 ];
@@ -25,11 +27,18 @@ INIT {
 sub options { our %options }
 sub error   { our $error }
 1;
+
+
 __END__
+=pod
 
 =head1 NAME
 
 Getopt::Attribute - Attribute wrapper for Getopt::Long
+
+=head1 VERSION
+
+version 1.100860
 
 =head1 SYNOPSIS
 
@@ -85,32 +94,49 @@ the C<error()> function:
 
     pod2usage(-verbose => 2, -exitval => 0) if Getopt::Attribute->error;
 
-=head1 BUGS AND LIMITATIONS
+=head1 METHODS
 
-No bugs have been reported.
+=head2 error
 
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
+FIXME
+
+=head2 options
+
+FIXME
 
 =head1 INSTALLATION
 
 See perlmodinstall for information and options on installing Perl modules.
 
+=head1 BUGS AND LIMITATIONS
+
+No bugs have been reported.
+
+Please report any bugs or feature requests through the web interface at
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=Getopt-Attribute>.
+
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://search.cpan.org/dist/Getopt-Attribute/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you, or see
+L<http://search.cpan.org/dist/Getopt-Attribute/>.
 
-=head1 AUTHORS
+The development version lives at
+L<http://github.com/hanekomu/Getopt-Attribute/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
-Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
+=head1 AUTHOR
+
+  Marcel Gruenauer <marcel@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2001-2009 by the authors.
+This software is copyright (c) 2001 by Marcel Gruenauer.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
+

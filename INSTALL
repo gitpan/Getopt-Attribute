@@ -1,9 +1,10 @@
-This is the Perl module Getopt::Attribute.
+
+This is the Perl distribution Getopt-Attribute.
 
 ## Installation
 
-Getopt::Attribute installation is straightforward. If your CPAN shell is set
-up, you should just be able to do
+Getopt-Attribute installation is straightforward.
+If your CPAN shell is set up, you should just be able to do
 
     % cpan Getopt::Attribute
 
@@ -18,10 +19,9 @@ Then install it:
 
 ## Documentation
 
-Getopt::Attribute documentation is available as in POD. So you can do:
+Getopt-Attribute documentation is available as in POD.
+So you can do:
 
     % perldoc Getopt::Attribute
 
-to read the documentation online with your favorite pager.
-
-Marcel Gruenauer
+to read the documentation with your favorite pager.

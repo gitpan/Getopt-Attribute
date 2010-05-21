@@ -3,7 +3,9 @@ use strict;
 use warnings;
 
 package Getopt::Attribute;
-our $VERSION = '1.100860';
+BEGIN {
+  $Getopt::Attribute::VERSION = '2.101410';
+}
 # ABSTRACT: Attribute wrapper for Getopt::Long
 use Getopt::Long;
 use Attribute::Handlers;
@@ -38,7 +40,7 @@ Getopt::Attribute - Attribute wrapper for Getopt::Long
 
 =head1 VERSION
 
-version 1.100860
+version 2.101410
 
 =head1 SYNOPSIS
 

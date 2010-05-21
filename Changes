@@ -1,5 +1,8 @@
 Revision history for Perl extension Getopt-Attribute
 
+2.101410  2010-05-21 12:38:39 Europe/Vienna
+    - set major version to 2 so version continuity on CPAN is preserved.
+
 1.100860  2010-03-27 11:23:21 Europe/Vienna
     - converted the distribution to Dist::Zilla-style
 

@@ -2,7 +2,7 @@ NAME
     Getopt::Attribute - Attribute wrapper for Getopt::Long
 
 VERSION
-    version 1.100860
+    version 2.101410
 
 SYNOPSIS
       use Getopt::Attribute;

@@ -4,8 +4,9 @@ use warnings;
 
 package Getopt::Attribute;
 BEGIN {
-  $Getopt::Attribute::VERSION = '2.101410';
+  $Getopt::Attribute::VERSION = '2.101700';
 }
+
 # ABSTRACT: Attribute wrapper for Getopt::Long
 use Getopt::Long;
 use Attribute::Handlers;
@@ -40,7 +41,7 @@ Getopt::Attribute - Attribute wrapper for Getopt::Long
 
 =head1 VERSION
 
-version 2.101410
+version 2.101700
 
 =head1 SYNOPSIS
 
@@ -79,12 +80,12 @@ Note that since attributes are processed during CHECK, but assignments
 on newly declared variables are processed during run-time, you
 can't set defaults on those variables beforehand, like this:
 
-	our $verbose : Getopt(verbose!) = 1;  # DOES NOT WORK
+    our $verbose : Getopt(verbose!) = 1;  # DOES NOT WORK
 
 Instead, you have to establish defaults afterwards, like so:
 
-	our $verbose : Getopt(verbose!);
-	$verbose ||= 1;
+    our $verbose : Getopt(verbose!);
+    $verbose ||= 1;
 
 Alternatively, you can specify a default value within the C<Getopt>
 attribute:
@@ -115,7 +116,7 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=Getopt-Attribute>.
+L<http://rt.cpan.org>.
 
 =head1 AVAILABILITY
 

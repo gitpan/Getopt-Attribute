@@ -2,7 +2,7 @@ NAME
     Getopt::Attribute - Attribute wrapper for Getopt::Long
 
 VERSION
-    version 2.101410
+    version 2.101700
 
 SYNOPSIS
       use Getopt::Attribute;
@@ -40,12 +40,12 @@ DESCRIPTION
     on newly declared variables are processed during run-time, you can't set
     defaults on those variables beforehand, like this:
 
-            our $verbose : Getopt(verbose!) = 1;  # DOES NOT WORK
+        our $verbose : Getopt(verbose!) = 1;  # DOES NOT WORK
 
     Instead, you have to establish defaults afterwards, like so:
 
-            our $verbose : Getopt(verbose!);
-            $verbose ||= 1;
+        our $verbose : Getopt(verbose!);
+        $verbose ||= 1;
 
     Alternatively, you can specify a default value within the "Getopt"
     attribute:
@@ -72,7 +72,7 @@ BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org/Public/Dist/Display.html?Name=Getopt-Attribute>.
+    <http://rt.cpan.org>.
 
 AVAILABILITY
     The latest version of this module is available from the Comprehensive

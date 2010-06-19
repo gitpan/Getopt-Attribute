@@ -11,7 +11,8 @@ build_requires:
   Test::More: 0.94
 configure_requires:
   ExtUtils::MakeMaker: 6.31
-generated_by: 'Dist::Zilla version 2.100960'
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.101582, CPAN::Meta::Converter version 2.101591'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -20,8 +21,7 @@ name: Getopt-Attribute
 provides:
   Getopt::Attribute:
     file: lib/Getopt/Attribute.pm
-    version: 2.101410
-recommends: {}
+    version: 2.101700
 requires:
   Attribute::Handlers: 0
   Getopt::Long: 0
@@ -30,4 +30,4 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Getopt-Attribute
   homepage: http://search.cpan.org/dist/Getopt-Attribute/
   repository: http://github.com/hanekomu/Getopt-Attribute
-version: 2.101410
+version: 2.101700
